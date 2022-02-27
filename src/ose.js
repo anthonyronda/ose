@@ -1,6 +1,7 @@
 // Import Modules
 import { OseItemSheet } from "./module/item/item-sheet.js";
 import { OseActorSheetCharacter } from "./module/actor/character-sheet.js";
+import { RedesignedOseActorSheetCharacter } from "./module/actor/redesigned-character-sheet.js";
 import { OseActorSheetMonster } from "./module/actor/monster-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { OseActor } from "./module/actor/entity.js";
@@ -55,6 +56,11 @@ Hooks.once("init", async function () {
     types: ["character"],
     makeDefault: true,
     label: "OSE.SheetClassCharacter",
+  });
+  Actors.registerSheet("ose", RedesignedOseActorSheetCharacter, {
+    types: ["character"],
+    makeDefault: false,
+    label: "OSE.RedesignedSheetClassCharacter",
   });
   Actors.registerSheet("ose", OseActorSheetMonster, {
     types: ["monster"],
